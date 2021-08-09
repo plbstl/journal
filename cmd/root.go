@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -39,6 +40,7 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
+	rootCmd.Version = internal.Version
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default is $HOME/.diary.yaml).")
 }
 
