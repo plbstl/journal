@@ -29,7 +29,6 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "diary",
 	Short: "Keep important notes in your cli",
-	Long:  `Keep important notes in your cli`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

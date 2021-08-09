@@ -36,8 +36,7 @@ func authorRun(cmd *cobra.Command, args []string) {
 // authorCmd represents the author command.
 var authorCmd = &cobra.Command{
 	Use:   "author",
-	Short: "",
-	Long:  `.`,
+	Short: "Create a new author",
 	Run:   authorRun,
 }
 

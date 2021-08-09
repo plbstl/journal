@@ -56,12 +56,11 @@ func createRun(cmd *cobra.Command, args []string) {
 // createCmd represents the create command
 var createCmd = &cobra.Command{
 	Use:   "create",
-	Short: "",
-	Long:  `.`,
+	Short: "Create a new note, author or tag",
 	Run:   createRun,
 }
 
 func init() {
 	rootCmd.AddCommand(createCmd)
-	createCmd.PersistentFlags().StringVar(&id, "id", "", "Associate a custom ID.")
+	createCmd.PersistentFlags().StringVar(&id, "id", "", "Associate a custom ID")
 }

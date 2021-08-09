@@ -36,8 +36,7 @@ func tagRun(cmd *cobra.Command, args []string) {
 // tagCmd represents the tag command
 var tagCmd = &cobra.Command{
 	Use:   "tag",
-	Short: "",
-	Long:  `.`,
+	Short: "Create a new tag",
 	Run:   tagRun,
 }
 

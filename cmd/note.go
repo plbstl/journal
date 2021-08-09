@@ -55,13 +55,12 @@ func noteRun(cmd *cobra.Command, args []string) {
 // noteCmd represents the note command
 var noteCmd = &cobra.Command{
 	Use:   "note",
-	Short: "",
-	Long:  `.`,
+	Short: "Create a new note",
 	Run:   noteRun,
 }
 
 func init() {
 	createCmd.AddCommand(noteCmd)
-	noteCmd.Flags().BoolVarP(&shouldOpenNote, "open", "o", false, "Open note after creating it.")
-	noteCmd.Flags().StringVarP(&text, "text", "t", "", "Add initial text to created note.")
+	noteCmd.Flags().BoolVarP(&shouldOpenNote, "open", "o", false, "Open note after creating it")
+	noteCmd.Flags().StringVarP(&text, "text", "t", "", "Add initial text to created note")
 }
