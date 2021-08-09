@@ -1,0 +1,15 @@
+changesDir: changes
+unreleasedDir: unreleased
+headerPath: header.tpl.md
+changelogPath: CHANGELOG.md
+versionExt: md
+versionFormat: '## [{{.Version}}] ({{.Time.Format "2006-01-02"}})'
+kindFormat: "### {{.Kind}}"
+changeFormat: "- {{.Body}}"
+kinds:
+  - label: Added # new features.
+  - label: Changed # changes in existing functionality.
+  - label: Deprecated # soon-to-be removed features.
+  - label: Removed # now removed features.
+  - label: Fixed # any bug fixes.
+  - label: Security # in case of vulnerabilities.

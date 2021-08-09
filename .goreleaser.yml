@@ -1,0 +1,41 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+      - freebsd
+archives:
+  - replacements:
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - src: "LICENSE"
+        dst: extra
+      - src: "CHANGELOG.md"
+        dst: extra
+      - src: "README.md"
+        dst: extra
+      - src: "USE.md"
+        dst: extra
+checksum:
+  name_template: "checksums.txt"
+  algorithm: sha256
+signs:
+  - artifacts: checksum
+release:
+  github:
+    owner: PaulEbose
+    name: diary
+  discussion_category_name: General
+  header: |
+    ## {{ time "January, 2006" }}
+
+    Welcome to Diary {{ .Tag }} release!
