@@ -6,7 +6,7 @@ import (
 	"golang.org/x/text/unicode/norm"
 )
 
-// Characters in these ranges will be ignored.
+// nop contains character ranges to be ignored.
 var nop = []*unicode.RangeTable{
 	unicode.Mark,
 	unicode.Sk, // Symbol - modifier

@@ -11,6 +11,8 @@ type Note struct {
 	Text   string  `json:"text"`
 }
 
+// NewNote creates and returns a new note.
+// It returns an error if any.
 func NewNote(id string, au *Author) Note {
 	var note Note
 	note.Author = au
@@ -21,6 +23,7 @@ func NewNote(id string, au *Author) Note {
 	return note
 }
 
+// OpenNote opens a note in a special terminal editor.
 func OpenNote(note *Note) {
 	// @todo: use a better way to load editor.
 	p := &survey.Editor{FileName: "*.md"}

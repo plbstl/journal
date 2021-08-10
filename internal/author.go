@@ -17,6 +17,8 @@ type Author struct {
 	Notes []*Note `json:"notes"`
 }
 
+// NewAuthor creates and returns a new author.
+// It returns an error if any.
 func NewAuthor(id string) (Author, error) {
 	var author Author
 	prompt := &survey.Input{Message: "Enter Author name:"}

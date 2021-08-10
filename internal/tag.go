@@ -12,6 +12,8 @@ type Tag struct {
 	Name string `json:"name"`
 }
 
+// NewTag creates and returns a new tag.
+// It returns an error if any.
 func NewTag() (Tag, error) {
 	var tag Tag
 	prompt := &survey.Input{Message: "Enter Tag name:"}
