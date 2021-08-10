@@ -17,6 +17,8 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/paulebose/diary/internal"
@@ -49,7 +51,27 @@ func noteRun(cmd *cobra.Command, args []string) {
 			internal.OpenNote(&note)
 		}
 	}
-	// @todo: save note persistently.
+
+	err := os.MkdirAll(notesDir, 0755)
+	if err != nil {
+		fmt.Println("cannot create notes directory", notesDir)
+		return
+	}
+
+	exists, err := internal.FileExists("note", note.ID, notesDir)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	if exists {
+		fmt.Printf("note with id %s exists already \n", cyan(note.ID))
+		return
+	}
+
+	if err = os.WriteFile(filepath.Join(notesDir, note.ID), []byte{}, 0666); err != nil {
+		fmt.Println("cannot save new note")
+		return
+	}
 }
 
 // noteCmd represents the note command

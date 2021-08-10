@@ -17,6 +17,8 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 
 	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
@@ -29,8 +31,29 @@ func authorRun(cmd *cobra.Command, args []string) {
 		fmt.Println("cannot create new author")
 		return
 	}
+
+	err = os.MkdirAll(authorsDir, 0755)
+	if err != nil {
+		fmt.Println("cannot create authors directory", authorsDir)
+		return
+	}
+
+	exists, err := internal.FileExists("author", author.Name, authorsDir)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	if exists {
+		fmt.Printf("%s exists already \n", cyan(author.Name))
+		return
+	}
+
+	if err = os.WriteFile(filepath.Join(authorsDir, author.Name), []byte{}, 0666); err != nil {
+		fmt.Println("cannot save new author")
+		return
+	}
+
 	fmt.Printf("author %s created with id %s \n", cyan(author.Name), cyan(author.ID))
-	// @todo: save author persistently.
 }
 
 // authorCmd represents the author command.

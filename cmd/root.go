@@ -18,13 +18,14 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
-var cfgFile string
+var authorsDir, cfgFile, diaryConfigDir, notesDir, tagsDir string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -46,6 +47,14 @@ func init() {
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
+	userConfigDir, err := os.UserConfigDir()
+	cobra.CheckErr(err)
+
+	diaryConfigDir = filepath.Join(userConfigDir, "Diary")
+	authorsDir = filepath.Join(diaryConfigDir, "authors")
+	notesDir = filepath.Join(diaryConfigDir, "notes")
+	tagsDir = filepath.Join(diaryConfigDir, "tags")
+
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)

@@ -17,6 +17,8 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
 
 	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
@@ -29,8 +31,29 @@ func tagRun(cmd *cobra.Command, args []string) {
 		fmt.Println("cannot create new tag")
 		return
 	}
+
+	err = os.MkdirAll(tagsDir, 0755)
+	if err != nil {
+		fmt.Println("cannot create tags directory", tagsDir)
+		return
+	}
+
+	exists, err := internal.FileExists("tag", tag.Name, tagsDir)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	if exists {
+		fmt.Printf("%s exists already \n", cyan(tag.Name))
+		return
+	}
+
+	if err = os.WriteFile(filepath.Join(tagsDir, tag.Name), []byte{}, 0666); err != nil {
+		fmt.Println("cannot save new tag")
+		return
+	}
+
 	fmt.Printf("tag %s created \n", cyan(tag.Name))
-	// @todo: save tag persistently.
 }
 
 // tagCmd represents the tag command
