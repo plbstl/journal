@@ -29,7 +29,6 @@ import (
 func noteRun(cmd *cobra.Command, args []string) {
 	// @todo: fetch author from somewhere.
 	au := &internal.Author{
-		ID:   "test-123",
 		Name: "authy",
 	}
 	note := internal.NewNote(id, au)

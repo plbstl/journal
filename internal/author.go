@@ -8,7 +8,6 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/docker/docker/pkg/namesgenerator"
-	"github.com/google/uuid"
 )
 
 type Author struct {
@@ -18,7 +17,7 @@ type Author struct {
 
 // NewAuthor creates and returns a new author.
 // It returns an error if any.
-func NewAuthor(id string) (Author, error) {
+func NewAuthor() (Author, error) {
 	var author Author
 
 	prompt := &survey.Input{Message: "Enter Author name:"}
@@ -35,11 +34,6 @@ func NewAuthor(id string) (Author, error) {
 		au[1] = strings.ToUpper(string(au[1][0])) + au[1][1:]
 		author.Name = strings.Join(au, " ")
 	}
-
-	if id == "" {
-		id = uuid.NewString()
-	}
-	author.ID = id
 
 	return author, nil
 }

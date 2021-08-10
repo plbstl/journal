@@ -26,7 +26,7 @@ import (
 
 // authorRun executes when `create author` command is run.
 func authorRun(cmd *cobra.Command, args []string) {
-	author, err := internal.NewAuthor(id)
+	author, err := internal.NewAuthor()
 	if err != nil {
 		fmt.Println("cannot create new author")
 		return
@@ -53,7 +53,7 @@ func authorRun(cmd *cobra.Command, args []string) {
 		return
 	}
 
-	fmt.Printf("author %s created with id %s \n", cyan(author.Name), cyan(author.ID))
+	fmt.Printf("author %s created \n", cyan(author.Name))
 }
 
 // authorCmd represents the author command.
