@@ -27,18 +27,18 @@ var nop = []*unicode.RangeTable{
 // passed through unaltered.
 func slug(s string) string {
 	buf := make([]rune, 0, len(s))
-	replacement := false
+	dash := false
 
 	for _, r := range norm.NFKD.String(s) {
 		switch {
 		case unicode.In(r, unicode.Letter):
 			buf = append(buf, unicode.ToLower(r))
-			replacement = true
+			dash = true
 		case unicode.IsOneOf(nop, r):
 			// skip
-		case replacement:
+		case dash:
 			buf = append(buf, '-')
-			replacement = false
+			dash = false
 		}
 	}
 

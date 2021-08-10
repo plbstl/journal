@@ -6,10 +6,10 @@ import (
 )
 
 // FileExists checks if a file already exists in the dir.
-func FileExists(name, filename, dir string) (bool, error) {
+func FileExists(item, filename, dir string) (bool, error) {
 	files, err := os.ReadDir(dir)
 	if err != nil {
-		return false, errors.New("cannot read " + name + "s directory: " + dir)
+		return false, errors.New("cannot read " + item + "s directory: " + dir)
 	}
 	for _, file := range files {
 		if !file.IsDir() {

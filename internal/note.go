@@ -6,7 +6,7 @@ import (
 )
 
 type Note struct {
-	ID, AuthorName, Text string
+	ID, AuthorName, Body string
 }
 
 // NewNote creates and returns a new note.
