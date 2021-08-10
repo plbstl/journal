@@ -17,19 +17,7 @@ package cmd
 
 import (
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/fatih/color"
 	"github.com/spf13/cobra"
-)
-
-const (
-	Author = "Author"
-	Note   = "Note"
-	Tag    = "Tag"
-)
-
-var (
-	id   string
-	cyan = color.New(color.FgCyan).SprintFunc()
 )
 
 // createRun executes when `create` command is run.

@@ -25,11 +25,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	shouldOpenNote bool
-	text           string
-)
-
 // noteRun executes when `create note` command is run.
 func noteRun(cmd *cobra.Command, args []string) {
 	// @todo: fetch author from somewhere.

@@ -23,11 +23,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var (
-	limit         int
-	authors, tags bool
-)
-
 // listRun executes when `list` command is run.
 func listRun(cmd *cobra.Command, args []string) {
 	// fetch notes

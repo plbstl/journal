@@ -24,8 +24,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var red = color.New(color.FgRed).SprintFunc()
-
 // deleteRun executes when `delete` command is run.
 func deleteRun(cmd *cobra.Command, args []string) {
 	if len(args) == 0 {
