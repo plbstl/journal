@@ -18,7 +18,6 @@ func NewTag() (Tag, error) {
 		// @todo: set random name for tag if empty.
 		tag.Name = "tag-name1"
 	}
-	// @todo: transform tag name.
-	// e.g. pOEtry ClAssEs -> poetry-classes
+	tag.Name = slug(tag.Name)
 	return tag, nil
 }
