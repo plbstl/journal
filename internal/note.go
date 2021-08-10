@@ -6,9 +6,9 @@ import (
 )
 
 type Note struct {
-	ID     string  `json:"id"`
-	Author *Author `json:"author"`
-	Text   string  `json:"text"`
+	ID     string
+	Author *Author
+	Text   string
 }
 
 // NewNote creates and returns a new note.

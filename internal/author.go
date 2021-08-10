@@ -12,15 +12,15 @@ import (
 )
 
 type Author struct {
-	ID    string  `json:"id"`
-	Name  string  `json:"name"`
-	Notes []*Note `json:"notes"`
+	ID, Name string
+	Notes    []string
 }
 
 // NewAuthor creates and returns a new author.
 // It returns an error if any.
 func NewAuthor(id string) (Author, error) {
 	var author Author
+
 	prompt := &survey.Input{Message: "Enter Author name:"}
 	if err := survey.AskOne(prompt, &author.Name); err != nil {
 		return author, err
@@ -40,6 +40,7 @@ func NewAuthor(id string) (Author, error) {
 		id = uuid.NewString()
 	}
 	author.ID = id
+
 	return author, nil
 }
 

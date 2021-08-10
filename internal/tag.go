@@ -9,7 +9,7 @@ import (
 )
 
 type Tag struct {
-	Name string `json:"name"`
+	Name string
 }
 
 // NewTag creates and returns a new tag.
