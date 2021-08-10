@@ -62,3 +62,19 @@ func init() {
 	listCmd.Flags().BoolVarP(&tags, "tags", "t", false, "Print out a list of created tags")
 	listCmd.Flags().IntVarP(&limit, "limit", "l", 10, "Max number of items to print out")
 }
+
+// listOf returns a slice of filenames found in the dir.
+func listOf(dir string) ([]string, error) {
+	var filenames []string
+	files, err := os.ReadDir(dir)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, file := range files {
+		if !file.IsDir() {
+			filenames = append(filenames, file.Name())
+		}
+	}
+	return filenames, nil
+}
