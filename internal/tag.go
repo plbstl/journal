@@ -1,7 +1,11 @@
 package internal
 
 import (
+	"math/rand"
+	"time"
+
 	"github.com/AlecAivazis/survey/v2"
+	"github.com/docker/docker/pkg/namesgenerator"
 )
 
 type Tag struct {
@@ -14,10 +18,10 @@ func NewTag() (Tag, error) {
 	if err := survey.AskOne(prompt, &tag.Name); err != nil {
 		return tag, err
 	}
-	if tag.Name == "" {
-		// @todo: set random name for tag if empty.
-		tag.Name = "tag-name1"
-	}
 	tag.Name = slug(tag.Name)
+	if tag.Name == "" {
+		rand.Seed(time.Now().UnixNano())
+		tag.Name = slug(namesgenerator.GetRandomName(0))
+	}
 	return tag, nil
 }
