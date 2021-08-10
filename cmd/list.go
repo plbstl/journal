@@ -20,6 +20,8 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/fatih/color"
+	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -36,14 +38,30 @@ func listRun(cmd *cobra.Command, args []string) {
 			filepaths = append(filepaths, filepath.Join(notesDir, file.Name()))
 		}
 	}
+
 	// list notes
-	// @todo: read title and body from saved notes.
-	// loadTitle()
-	// loadTruncatedBody()
-	fmt.Println(filepaths)
+	for i, fp := range filepaths {
+		if i >= limit {
+			break
+		}
+
+		var note internal.Note
+		if err = internal.UnmarshalNote(&note, fp); err != nil {
+			fmt.Println(err)
+			continue
+		}
+
+		if note.Title == "" {
+			color.Blue("[No Title]")
+		} else {
+			color.Blue(note.Title)
+		}
+		fmt.Println(note.TruncatedBody(69))
+		fmt.Println()
+	}
 }
 
-// listCmd represents the list command
+// listCmd represents the list command.
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "Print out a list of created notes",
@@ -58,7 +76,7 @@ func init() {
 	listCmd.Flags().IntVarP(&limit, "limit", "l", 10, "Max number of items to print out")
 }
 
-// listOf returns a slice of filenames found in the dir.
+// listOf returns a slice of filenames found in the directory.
 func listOf(dir string) ([]string, error) {
 	var filenames []string
 	files, err := os.ReadDir(dir)
