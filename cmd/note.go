@@ -28,10 +28,7 @@ import (
 // noteRun executes when `create note` command is run.
 func noteRun(cmd *cobra.Command, args []string) {
 	// @todo: fetch author from somewhere.
-	au := &internal.Author{
-		Name: "authy",
-	}
-	note := internal.NewNote(id, au)
+	note := internal.NewNote(id, "Authy Prof")
 	fmt.Printf("note created with id %s \n", cyan(note.ID))
 
 	if shouldOpenNote {

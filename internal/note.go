@@ -6,16 +6,14 @@ import (
 )
 
 type Note struct {
-	ID     string
-	Author *Author
-	Text   string
+	ID, AuthorName, Text string
 }
 
 // NewNote creates and returns a new note.
 // It returns an error if any.
-func NewNote(id string, au *Author) Note {
+func NewNote(id, authorName string) Note {
 	var note Note
-	note.Author = au
+	note.AuthorName = authorName
 	if id == "" {
 		id = uuid.NewString()
 	}
