@@ -1,4 +1,4 @@
-module github.com/paulebose/diary
+module github.com/paulebose/journal
 
 go 1.16
 

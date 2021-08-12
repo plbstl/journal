@@ -13,4 +13,4 @@ var (
 	red  = color.New(color.FgRed).SprintFunc()
 )
 
-var authorsDir, cfgFile, diaryConfigDir, notesDir, tagsDir string
+var authorsDir, cfgFile, journalConfigDir, notesDir, tagsDir string

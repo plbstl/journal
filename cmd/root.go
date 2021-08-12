@@ -20,14 +20,14 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/paulebose/diary/internal"
+	"github.com/paulebose/journal/internal"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "diary",
+	Use:   "journal",
 	Short: "Keep important notes in your cli",
 }
 
@@ -40,7 +40,7 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 	rootCmd.Version = internal.Version
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default on windows=[%AppData%\\Diary\\config.yml], mac=[$HOME/Library/Application Support/Diary/config.yml], linux=[$HOME/.config/Diary/config.yml]).")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default on windows=[%AppData%\\Journal\\config.yml], mac=[$HOME/Library/Application Support/Journal/config.yml], linux=[$HOME/.config/Journal/config.yml]).")
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -48,17 +48,17 @@ func initConfig() {
 	userConfigDir, err := os.UserConfigDir()
 	cobra.CheckErr(err)
 
-	diaryConfigDir = filepath.Join(userConfigDir, "Diary")
-	authorsDir = filepath.Join(diaryConfigDir, "authors")
-	notesDir = filepath.Join(diaryConfigDir, "notes")
-	tagsDir = filepath.Join(diaryConfigDir, "tags")
+	journalConfigDir = filepath.Join(userConfigDir, "Journal")
+	authorsDir = filepath.Join(journalConfigDir, "authors")
+	notesDir = filepath.Join(journalConfigDir, "notes")
+	tagsDir = filepath.Join(journalConfigDir, "tags")
 
 	if cfgFile != "" {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		// Search for config in diaryConfigDir directory with name "config" (without extension).
-		viper.AddConfigPath(diaryConfigDir)
+		// Search for config in journalConfigDir directory with name "config" (without extension).
+		viper.AddConfigPath(journalConfigDir)
 		viper.SetConfigType("yaml")
 		viper.SetConfigName("config")
 	}

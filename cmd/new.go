@@ -29,7 +29,7 @@ func newRun(cmd *cobra.Command, args []string) {
 // newCmd represents the `new` command
 var newCmd = &cobra.Command{
 	Use:   "new",
-	Short: `Alias for "diary create note --open"`,
+	Short: `Alias for "journal create note --open"`,
 	Run:   newRun,
 }
 

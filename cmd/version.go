@@ -18,19 +18,19 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/paulebose/diary/internal"
+	"github.com/paulebose/journal/internal"
 	"github.com/spf13/cobra"
 )
 
 // versionRun executes when `version` command is run.
 func versionRun(cmd *cobra.Command, args []string) {
-	fmt.Printf("Diary v%s \n", internal.Version)
+	fmt.Printf("Journal v%s \n", internal.Version)
 }
 
 // versionCmd represents the `version` command
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Show installed version of Diary",
+	Short: "Show installed version of Journal",
 	Run:   versionRun,
 }
 

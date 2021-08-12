@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/paulebose/diary/cmd"
+import "github.com/paulebose/journal/cmd"
 
 func main() {
 	cmd.Execute()

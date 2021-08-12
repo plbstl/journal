@@ -33,9 +33,9 @@ signs:
 release:
   github:
     owner: PaulEbose
-    name: diary
+    name: journal
   discussion_category_name: General
   header: |
     ## {{ time "January, 2006" }}
 
-    Welcome to Diary {{ .Tag }} release!
+    Welcome to Journal {{ .Tag }} release!

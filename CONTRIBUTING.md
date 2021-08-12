@@ -1,6 +1,6 @@
-# Contributing to Diary
+# Contributing to Journal
 
-🎉🎉 First off, thanks for the interest in contributing to `diary`! 🎉🎉
+🎉🎉 First off, thanks for the interest in contributing to `journal`! 🎉🎉
 
 The following is a set of guidelines to follow when contributing to this package. These are not hard rules, please use common sense and feel free to propose changes to this document in a pull request.
 
@@ -19,7 +19,7 @@ This project and its contibutors are expected to uphold the [Go Community Code o
 
 ## Getting help
 
-Feel free to [open up an issue](https://github.com/PaulEbose/diary/issues/new) on GitHub when asking a question so others will be able to find it. Please remember to tag the issue with the `Question` label so the maintainers can get to your question as soon as possible. If the question is urgent, feel free to reach out to `@PaulEbose` directly in the gophers slack channel.
+Feel free to [open up an issue](https://github.com/PaulEbose/journal/issues/new) on GitHub when asking a question so others will be able to find it. Please remember to tag the issue with the `Question` label so the maintainers can get to your question as soon as possible. If the question is urgent, feel free to reach out to `@PaulEbose` directly in the gophers slack channel.
 
 ## How to file a bug report
 
@@ -36,6 +36,6 @@ If you have an idea, I'm more than happy to discuss it. Please open an issue and
 
 ## Submitting a contribution
 
-In order to maintain stability, most features get fully integrated in more than one PR. This allows for more opportunity to think through each API change without amassing large amounts of tech debt and API changes at once. If your feature can be broken into separate chunks, it will be able to be reviewed much quicker. 
+In order to maintain stability, most features get fully integrated in more than one PR. This allows for more opportunity to think through each API change without amassing large amounts of tech debt and API changes at once. If your feature can be broken into separate chunks, it will be able to be reviewed much quicker.
 
 ## Writing and running tests

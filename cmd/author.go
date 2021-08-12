@@ -20,7 +20,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/paulebose/diary/internal"
+	"github.com/paulebose/journal/internal"
 	"github.com/spf13/cobra"
 )
 
