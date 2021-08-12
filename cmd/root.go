@@ -40,7 +40,7 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 	rootCmd.Version = internal.Version
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default is $HOME/.diary.yaml).")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default on windows=[%AppData%\\Diary\\config.yml], mac=[$HOME/Library/Application Support/Diary/config.yml], linux=[$HOME/.config/Diary/config.yml]).")
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -57,14 +57,10 @@ func initConfig() {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		// Find home directory.
-		home, err := os.UserHomeDir()
-		cobra.CheckErr(err)
-
-		// Search config in home directory with name ".diary" (without extension).
-		viper.AddConfigPath(home)
+		// Search for config in diaryConfigDir directory with name "config" (without extension).
+		viper.AddConfigPath(diaryConfigDir)
 		viper.SetConfigType("yaml")
-		viper.SetConfigName(".diary")
+		viper.SetConfigName("config")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
