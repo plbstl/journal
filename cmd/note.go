@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/paulebose/diary/internal"
@@ -28,7 +29,12 @@ import (
 // noteRun executes when `create note` command is run.
 func noteRun(cmd *cobra.Command, args []string) {
 	// @todo: fetch author from somewhere.
-	note := internal.NewNote(id, "Authy Prof")
+	author = strings.TrimSpace(author)
+	if author == "" {
+		const defaultAuthor = "Authy Prof"
+		author = defaultAuthor
+	}
+	note := internal.NewNote(id, author)
 	fmt.Printf("note created with id %s \n", cyan(note.ID))
 
 	if shouldOpenNote {
@@ -77,4 +83,5 @@ func init() {
 	noteCmd.Flags().BoolVarP(&shouldOpenNote, "open", "o", false, "Open note after creating it")
 	noteCmd.Flags().StringVarP(&text, "text", "t", "", "Add initial text to created note")
 	noteCmd.Flags().StringVar(&id, "id", "", "Associate a custom ID")
+	noteCmd.Flags().StringVar(&author, "author", "", "Use custom author to create note")
 }

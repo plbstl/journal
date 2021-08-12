@@ -12,7 +12,7 @@ var (
 	limit                int
 	notes, authors       bool
 	tags, shouldOpenNote bool
-	id, text             string
+	id, text, author     string
 	cyan                 = color.New(color.FgCyan).SprintFunc()
 	red                  = color.New(color.FgRed).SprintFunc()
 )
