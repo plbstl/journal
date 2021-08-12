@@ -76,4 +76,5 @@ func init() {
 	createCmd.AddCommand(noteCmd)
 	noteCmd.Flags().BoolVarP(&shouldOpenNote, "open", "o", false, "Open note after creating it")
 	noteCmd.Flags().StringVarP(&text, "text", "t", "", "Add initial text to created note")
+	noteCmd.Flags().StringVar(&id, "id", "", "Associate a custom ID")
 }

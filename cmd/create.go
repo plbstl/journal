@@ -50,5 +50,4 @@ var createCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(createCmd)
-	createCmd.PersistentFlags().StringVar(&id, "id", "", "Associate a custom ID")
 }
