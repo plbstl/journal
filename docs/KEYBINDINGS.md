@@ -29,7 +29,7 @@
   <kbd>d</kbd> delete selection
   <kbd>a</kbd> archive selected note(s)
   <kbd>p</kbd> pin highlighted note (max 4 pins)
-  <kbd>s</kbd> save higlighted note
+  <kbd>s</kbd> save highlighted note
   <kbd>/</kbd> start search
   <kbd>N</kbd> prev match
   <kbd>n</kbd> next match

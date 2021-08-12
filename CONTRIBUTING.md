@@ -15,7 +15,7 @@ The following is a set of guidelines to follow when contributing to this package
 
 ## Code of Conduct
 
-This project and its contibutors are expected to uphold the [Go Community Code of Conduct](https://golang.org/conduct). By participating, you are expected to follow these guidelines.
+This project and its contributors are expected to uphold the [Go Community Code of Conduct](https://golang.org/conduct). By participating, you are expected to follow these guidelines.
 
 ## Getting help
 

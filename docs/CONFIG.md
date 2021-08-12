@@ -33,7 +33,7 @@ keybindings:
         archive: 'a' # archive selected note(s)
         refresh: 'r' # refresh the list of notes, authors or tags (depends on panel in focus)
         pin: 'p' # pin highlighted note to the home view (max 4 pins)
-        save: 's' # save higlighted note
+        save: 's' # save highlighted note
         select: 'x' # select highlighted item in the focused panel (toggles)
         clearSelection: 'c' # unselect all items in the focused panel (toggles)
         invertSelection: 'k' # invert selected item(s) in the focused panel (toggles)
