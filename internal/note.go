@@ -22,7 +22,6 @@ func (n *Note) TruncatedBody(length int) string {
 }
 
 // NewNote creates and returns a new note.
-// It returns an error if any.
 func NewNote(id, authorName string) Note {
 	var note Note
 	note.AuthorName = authorName
