@@ -27,7 +27,7 @@ func versionRun(cmd *cobra.Command, args []string) {
 	fmt.Printf("Diary v%s \n", internal.Version)
 }
 
-// versionCmd represents the version command
+// versionCmd represents the `version` command
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Show installed version of Diary",

@@ -60,7 +60,7 @@ func deleteRun(cmd *cobra.Command, args []string) {
 	fmt.Printf("cannot find ID %s \n", cyan(id))
 }
 
-// deleteCmd represents the delete command
+// deleteCmd represents the `delete` command
 var deleteCmd = &cobra.Command{
 	Use:     "delete",
 	Short:   "Delete a note, tag or author with the specified ID",

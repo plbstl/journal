@@ -19,18 +19,25 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/paulebose/diary/internal"
 	"github.com/spf13/cobra"
 )
 
-// noteRun executes when `create note` command is run.
+// noteRun executes when `create note` subcommand is run.
 func noteRun(cmd *cobra.Command, args []string) {
-	// @todo: fetch author from somewhere.
-	author = strings.TrimSpace(author)
+	author, err := cmd.Flags().GetString("author")
+	cobra.CheckErr(err)
+	// text, err := cmd.Flags().GetString("text")
+	// cobra.CheckErr(err)
+	id, err := cmd.Flags().GetString("id")
+	cobra.CheckErr(err)
+	shouldOpenNote, err := cmd.Flags().GetBool("open")
+	cobra.CheckErr(err)
+
 	if author == "" {
+		// @todo: fetch default author from somewhere.
 		const defaultAuthor = "Authy Prof"
 		author = defaultAuthor
 	}
@@ -49,7 +56,7 @@ func noteRun(cmd *cobra.Command, args []string) {
 		}
 	}
 
-	err := os.MkdirAll(notesDir, 0755)
+	err = os.MkdirAll(notesDir, 0755)
 	if err != nil {
 		fmt.Println("cannot create notes directory", notesDir)
 		return
@@ -71,7 +78,7 @@ func noteRun(cmd *cobra.Command, args []string) {
 	}
 }
 
-// noteCmd represents the note command
+// noteCmd represents the `note` subcommand
 var noteCmd = &cobra.Command{
 	Use:   "note",
 	Short: "Create a new note",
@@ -80,8 +87,12 @@ var noteCmd = &cobra.Command{
 
 func init() {
 	createCmd.AddCommand(noteCmd)
-	noteCmd.Flags().BoolVarP(&shouldOpenNote, "open", "o", false, "Open note after creating it")
-	noteCmd.Flags().StringVarP(&text, "text", "t", "", "Add initial text to created note")
-	noteCmd.Flags().StringVar(&id, "id", "", "Associate a custom ID")
-	noteCmd.Flags().StringVar(&author, "author", "", "Use custom author to create note")
+	initNoteFlags(noteCmd)
+}
+
+func initNoteFlags(cmd *cobra.Command) {
+	cmd.Flags().BoolP("open", "o", false, "Open note after creating it")
+	cmd.Flags().StringP("text", "t", "", "Add initial text to created note")
+	cmd.Flags().String("id", "", "Associate a custom ID")
+	cmd.Flags().String("author", "", "Use custom author to create note")
 }

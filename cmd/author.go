@@ -24,7 +24,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// authorRun executes when `create author` command is run.
+// authorRun executes when `create author` subcommand is run.
 func authorRun(cmd *cobra.Command, args []string) {
 	author, err := internal.NewAuthor()
 	if err != nil {
@@ -56,7 +56,7 @@ func authorRun(cmd *cobra.Command, args []string) {
 	fmt.Printf("author %s created \n", cyan(author.Name))
 }
 
-// authorCmd represents the author command.
+// authorCmd represents the `author` subcommand.
 var authorCmd = &cobra.Command{
 	Use:   "author",
 	Short: "Create a new author",

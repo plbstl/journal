@@ -27,6 +27,13 @@ import (
 
 // listRun executes when `list` command is run.
 func listRun(cmd *cobra.Command, args []string) {
+	// authors, err := cmd.Flags().GetBool("authors")
+	// cobra.CheckErr(err)
+	// tags, err := cmd.Flags().GetBool("tags")
+	// cobra.CheckErr(err)
+	limit, err := cmd.Flags().GetInt("limit")
+	cobra.CheckErr(err)
+
 	// fetch notes
 	files, err := os.ReadDir(notesDir)
 	if err != nil {
@@ -61,7 +68,7 @@ func listRun(cmd *cobra.Command, args []string) {
 	}
 }
 
-// listCmd represents the list command.
+// listCmd represents the `list` command.
 var listCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "Print out a list of created notes",
@@ -71,9 +78,9 @@ var listCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(listCmd)
-	listCmd.Flags().BoolVarP(&authors, "authors", "a", false, "Print out a list of authors")
-	listCmd.Flags().BoolVarP(&tags, "tags", "t", false, "Print out a list of created tags")
-	listCmd.Flags().IntVarP(&limit, "limit", "l", 10, "Max number of items to print out")
+	listCmd.Flags().BoolP("authors", "a", false, "Print out a list of authors")
+	listCmd.Flags().BoolP("tags", "t", false, "Print out a list of created tags")
+	listCmd.Flags().IntP("limit", "l", 10, "Max number of items to print out")
 }
 
 // listOf returns a slice of filenames found in the directory.

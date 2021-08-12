@@ -20,8 +20,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// allRun executes when `delete all` command is run.
+// allRun executes when `delete all` subcommand is run.
 func allRun(cmd *cobra.Command, args []string) {
+	notes, err := cmd.Flags().GetBool("notes")
+	cobra.CheckErr(err)
+	authors, err := cmd.Flags().GetBool("authors")
+	cobra.CheckErr(err)
+	tags, err := cmd.Flags().GetBool("tags")
+	cobra.CheckErr(err)
+
 	var used bool
 	if notes {
 		deleteFiles("notes", notesDir)
@@ -41,7 +48,7 @@ func allRun(cmd *cobra.Command, args []string) {
 	}
 }
 
-// allCmd represents the all command
+// allCmd represents the `all` subcommand
 var allCmd = &cobra.Command{
 	Use:   "all",
 	Short: "Delete all notes, authors or tags",
@@ -51,7 +58,7 @@ var allCmd = &cobra.Command{
 
 func init() {
 	deleteCmd.AddCommand(allCmd)
-	allCmd.Flags().BoolVar(&notes, "notes", false, "Delete all notes")
-	allCmd.Flags().BoolVar(&authors, "authors", false, "Delete all authors")
-	allCmd.Flags().BoolVar(&tags, "tags", false, "Delete all tags")
+	allCmd.Flags().Bool("notes", false, "Delete all notes")
+	allCmd.Flags().Bool("authors", false, "Delete all authors")
+	allCmd.Flags().Bool("tags", false, "Delete all tags")
 }

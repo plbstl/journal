@@ -24,7 +24,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// tagRun executes when `create tag` command is run.
+// tagRun executes when `create tag` subcommand is run.
 func tagRun(cmd *cobra.Command, args []string) {
 	tag, err := internal.NewTag()
 	if err != nil {
@@ -56,7 +56,7 @@ func tagRun(cmd *cobra.Command, args []string) {
 	fmt.Printf("tag %s created \n", cyan(tag.Name))
 }
 
-// tagCmd represents the tag command
+// tagCmd represents the `tag` subcommand
 var tagCmd = &cobra.Command{
 	Use:   "tag",
 	Short: "Create a new tag",

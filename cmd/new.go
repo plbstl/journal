@@ -21,11 +21,12 @@ import (
 
 // newRun executes when `new` command is run.
 func newRun(cmd *cobra.Command, args []string) {
-	shouldOpenNote = true
+	initNoteFlags(cmd)
+	cmd.Flags().Set("open", "true")
 	noteRun(cmd, args)
 }
 
-// newCmd represents the new command
+// newCmd represents the `new` command
 var newCmd = &cobra.Command{
 	Use:   "new",
 	Short: `Alias for "diary create note --open"`,

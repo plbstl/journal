@@ -41,7 +41,7 @@ func createRun(cmd *cobra.Command, args []string) {
 	}
 }
 
-// createCmd represents the create command
+// createCmd represents the `create` command
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a new note, author or tag",
