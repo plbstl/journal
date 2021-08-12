@@ -1,0 +1,4 @@
+kind: Changed
+body: Default location of Diary config from user's home directory to user's config
+  directory
+time: 2021-08-12T16:18:25.843420682+01:00
