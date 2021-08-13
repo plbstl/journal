@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Journal_Icon.svg" height=300 alt="Journal"/>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Journal_Icon.svg" height=200 alt="Journal"/>
 </p>
 
 <h3 align="center">Journal</h3>
@@ -17,7 +17,7 @@
 
 ---
 
-<p align="center">📔 Keep important notes in your cli.</p>
+<p align="center">📔 Preserve your memories, self-reflect and record ideas on-the-go.</p>
 
 ## 📝 Table of Contents
 
@@ -30,13 +30,11 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of this project.
+Journal helps you manage multiple journals with ease from the comfort of your terminal, web browser or API client.
+You can import/export journals as [horcruxes](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Horcruxes) and set simple customizations for layout, theme, and keybindings.
 
-Some cool features:
-
--   spin up local web server to manage _journal_ through a browser
--   terminal app to manage _journal_ through GUI (without commands) with mouse support
--   lots of simple customizations for layout, theme and keybindings
+Journal brings out the quintessence of your potent yet pervious mind.
+Get personal with it and use its gorgeous powers for good.
 
 <!-- @todo: create screencasts for cli & web -->
 
@@ -44,13 +42,13 @@ Some cool features:
 
 Cli Screencast
 
-<!-- ![Cli Screencast](docs/resources/cli-screencast.gif) -->
+<!-- ![Cli Screencast](docs/resources/cli-demo.gif) -->
 
 ![Cli Screencast](https://media.giphy.com/media/11PEptfDmR4vjW/giphy.gif)
 
 Web Screencast
 
-<!-- ![Web Screencast](docs/resources/web-screencast.gif) -->
+<!-- ![Web Screencast](docs/resources/web-demo.gif) -->
 
 ![Web Screencast](https://media.giphy.com/media/IwTWTsUzmIicM/giphy.gif)
 
@@ -79,6 +77,8 @@ may need to add `~/go/bin` to your _\$PATH_. `~/go/bin` should not be mistaken f
 not installed apps like _journal_).
 
 ## 🎈 Usage <a name="usage"></a>
+
+Here is some basic usage information for terminal.
 
 ### Commands
 
@@ -122,9 +122,7 @@ journal help
   <kbd>/</kbd> search
   <kbd>x</kbd> select item
   <kbd>Q</kbd> quit
-  <kbd>esc</kbd> return to previous menu, will quit if there's nowhere to return
-  <kbd>pgup</kbd> scroll to top
-  <kbd>pgdown</kbd> scroll to bottom
+  <kbd>esc</kbd> close current panel
 </pre>
 
 Check the [keybindings docs](docs/KEYBINDINGS.md) for more information.
