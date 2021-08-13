@@ -1,0 +1,6 @@
+-   [Getting Started](/)
+-   [Configuration](config.md)
+-   [Keybindings](keybindings.md)
+-   [Contributing](contributing)
+-   [Changelog](changelog)
+-   [License](LICENSE)

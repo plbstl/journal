@@ -2,7 +2,8 @@
  <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Journal_Icon.svg" height=200 alt="Journal"/>
 </p>
 
-<h3 align="center">Journal</h3>
+<h1 align="center">Journal</h1>
+<p align="center">📔 Preserve your memories, self-reflect and record ideas on-the-go.</p>
 
 <div align="center">
 
@@ -17,19 +18,6 @@
 
 ---
 
-<p align="center">📔 Preserve your memories, self-reflect and record ideas on-the-go.</p>
-
-## 📝 Table of Contents
-
--   [About <a name = "about"></a>](#about)
--   [Getting Started](#getting-started)
--   [Usage](#usage)
--   [Contributing](#contributing)
--   [Authors](#authors)
--   [Acknowledgement](#acknowledgement)
-
-## 🧐 About <a name = "about"></a>
-
 Journal helps you manage multiple journals with ease from the comfort of your terminal, web browser or API client.
 You can import/export journals as [horcruxes](https://en.wikipedia.org/wiki/Magical_objects_in_Harry_Potter#Horcruxes) and set simple customizations for layout, theme, and keybindings.
 
@@ -42,19 +30,19 @@ Get personal with it and use its gorgeous powers for good.
 
 Cli Screencast
 
-<!-- ![Cli Screencast](docs/resources/cli-demo.gif) -->
+<!-- ![Cli Screencast](/resources/cli-demo.gif "-gifcontrol-mode=click;") -->
 
-![Cli Screencast](https://media.giphy.com/media/jRlP4zbERYW5HoCLvX/giphy.gif)
+![Cli Screencast](https://media.giphy.com/media/jRlP4zbERYW5HoCLvX/giphy.gif '-gifcontrol-mode=click;')
 
 Web Screencast
 
-<!-- ![Web Screencast](docs/resources/web-demo.gif) -->
+<!-- ![Web Screencast](/resources/web-demo.gif "-gifcontrol-mode=click;") -->
 
-![Web Screencast](https://media.giphy.com/media/IwTWTsUzmIicM/giphy.gif)
+![Web Screencast](https://media.giphy.com/media/IwTWTsUzmIicM/giphy.gif '-gifcontrol-mode=click;')
 
 </div>
 
-## 🏁 Getting Started <a name="getting-started"></a>
+## Quick Start <a name="quick-start"></a>
 
 <!-- @todo: upload live demo; edit live-demo-link -->
 
@@ -76,7 +64,7 @@ If you get an error claiming that _journal_ command cannot be found or is not de
 may need to add `~/go/bin` to your _\$PATH_. `~/go/bin` should not be mistaken for `$GOROOT/bin` (which is for Go's own binaries,
 not installed apps like _journal_).
 
-## 🎈 Usage <a name="usage"></a>
+## Usage <a name="usage"></a>
 
 Here is some basic usage information for terminal.
 
@@ -115,6 +103,7 @@ journal help
 ### Keybindings
 
 <pre>
+
   <kbd>r</kbd> refresh list
   <kbd>h</kbd> show help
   <kbd>t</kbd> toggle screen mode (normal/half/fullscreen)
@@ -123,9 +112,10 @@ journal help
   <kbd>x</kbd> select item
   <kbd>Q</kbd> quit
   <kbd>esc</kbd> close current panel
+
 </pre>
 
-Check the [keybindings docs](docs/KEYBINDINGS.md) for more information.
+Check the [keybindings docs](/keybindings.md) for more information.
 
 ### Configuration
 
@@ -147,22 +137,7 @@ web:
     port: 9001
 ```
 
-Check the [configuration docs](docs/CONFIG.md) for more information.
-
-## 🤿 Contributing <a name = "contributing"></a>
-
-Contributors are welcome! Please check out the [contributing guide](CONTRIBUTING.md).
-For discussions about stuff, you can use [GitHub Discussions][gh-discussions-link]
-
-## ✍️ Authors <a name = "authors"></a>
-
--   [@PaulEbose](https://github.com/PaulEbose) - Idea & initial work
-
-See also the list of [contributors][gh-contributors-link] who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
--   Influence: [@Richmond-Eribo](https://github.com/Richmond-Eribo)
+Check the [configuration docs](/config.md) for more information.
 
 [license-badge]: https://img.shields.io/github/license/paulebose/journal
 [license-link]: LICENSE.md
@@ -171,7 +146,6 @@ See also the list of [contributors][gh-contributors-link] who participated in th
 [pkg-godev-link]: https://pkg.go.dev/github.com/PaulEbose/journal
 [gh-contributors-badge]: https://img.shields.io/github/contributors/paulebose/journal
 [gh-contributors-link]: https://github.com/PaulEbose/journal/graphs/contributors
-[gh-discussions-link]: https://github.com/PaulEbose/journal/discussions
 [gh-issues-badge]: https://img.shields.io/github/issues/paulebose/journal
 [gh-issues-link]: https://github.com/paulebose/journal/issues
 [gh-pulls-badge]: https://img.shields.io/github/issues-pr/paulebose/journal

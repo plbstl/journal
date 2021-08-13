@@ -6,9 +6,8 @@ Default path for config file:
 -   **MacOS**: `/Users/USERNAME/Library/Application Support/Journal/config.yml`
 -   **Linux**: `/home/USERNAME/.config/Journal/config.yml`
 
-## ⚠️ Note
-
-**_If the same value is used for different keybindings, the bindings will have an unpredictable behaviour._**
+> [!WARNING]
+> If the same value is used for different keybindings, the bindings will have an unpredictable behaviour.
 
 ## Default Config
 
@@ -62,7 +61,8 @@ cli:
     editor: 'default'
 ```
 
-Notes, authors & tags are saved as plain text files.
+> [!TIP]
+> Notes, authors & tags are saved as plain text files.
 
 ## Default Colors
 
