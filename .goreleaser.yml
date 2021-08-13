@@ -21,8 +21,6 @@ archives:
         dst: extra
       - src: "CHANGELOG.md"
         dst: extra
-      - src: "README.md"
-        dst: extra
       - src: "docs/config.md"
         dst: extra
       - src: "docs/keybindings.md"
