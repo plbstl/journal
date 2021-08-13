@@ -3,6 +3,7 @@
 ## Global
 
 <pre>
+
   <kbd>h</kbd> display help
   <kbd>?</kbd> display help
   <kbd>,</kbd> show settings
@@ -11,11 +12,13 @@
   <kbd>]</kbd> next/right tab
   <kbd>t</kbd> toggle size of highlighted item (normal/half/fullscreen)
   <kbd>esc</kbd> return to previous panel
+
 </pre>
 
 ## Focused Panel
 
 <pre>
+
   <kbd><</kbd> scroll to top
   <kbd>></kbd> scroll to bottom
   <kbd>n</kbd> create new item
@@ -33,4 +36,5 @@
   <kbd>/</kbd> start search
   <kbd>N</kbd> prev match
   <kbd>n</kbd> next match
+
 </pre>
