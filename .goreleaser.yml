@@ -17,13 +17,15 @@ archives:
       - goos: windows
         format: zip
     files:
-      - src: "LICENSE"
+      - src: "LICENSE.md"
         dst: extra
       - src: "CHANGELOG.md"
         dst: extra
       - src: "README.md"
         dst: extra
-      - src: "USE.md"
+      - src: "docs/config.md"
+        dst: extra
+      - src: "docs/keybindings.md"
         dst: extra
 checksum:
   name_template: "checksums.txt"
