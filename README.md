@@ -44,7 +44,7 @@ Cli Screencast
 
 <!-- ![Cli Screencast](docs/resources/cli-demo.gif) -->
 
-![Cli Screencast](https://media.giphy.com/media/11PEptfDmR4vjW/giphy.gif)
+![Cli Screencast](https://media.giphy.com/media/jRlP4zbERYW5HoCLvX/giphy.gif)
 
 Web Screencast
 
@@ -64,7 +64,7 @@ Check out [live demo][live-demo-link] of web app.
 
 #### Binary Release
 
-You can download a binary release for Windows, Mac or Linux [here]([release-link]).
+You can download a binary release for Windows, Mac or Linux [here][release-link].
 
 #### Using Go Get
 
